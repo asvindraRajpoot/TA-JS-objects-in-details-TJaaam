@@ -67,14 +67,14 @@ person2.displayName(); // `Name: Paul Adams`
 function foo() {
   'use strict';
   console.log('Simple function call');
-  console.log(this === window);
+  console.log(this === window);//false
 }
 
 let user = {
   count: 10,
   foo: foo,
   foo1: function () {
-    console.log(this === window);
+    console.log(this === window);//false
   },
 };
 
@@ -136,7 +136,7 @@ obj.getThis4 = obj.getThis2.bind(obj);
 // window
 obj.getThis();
 
-// a
+// window
 obj.getThis.call(a);
 
 // obj
@@ -145,7 +145,7 @@ obj.getThis2();
 // a
 obj.getThis2.call(a);
 
-// obj
+// window
 obj.getThis3();
 
 // obj
@@ -212,7 +212,7 @@ let object = {
     console.log('this inside of outerFn double()');
     console.log(this);
     return this.data.map(function (item) {
-      console.log(this,'first this'); // data
+      console.log(this,'first this'); // window
       return item * 2;
     });
   },
@@ -220,7 +220,7 @@ let object = {
     console.log('this inside of outerFn doubleArrow()');
     console.log(this);
     return this.dataDouble.map((item) => {
-      console.log(this,'second this'); // dataDouble
+      console.log(this,'second this'); // object
       return item * 2;
     });
   },
@@ -240,7 +240,7 @@ function print() {
 }
 
 let printNameBob = print.bind(bobObj);
-console.log(printNameBob()); // window
+console.log(printNameBob()); // 'Bob'
 
 // -------------------
 
@@ -283,7 +283,7 @@ const call = {
 
 let newCall = call.says;
 
-newCall(); // window
+newCall(); // Hey,undefined just called
 
 //  -----------------
 
@@ -301,4 +301,4 @@ const call = {
 
 let newCall = call.anotherCaller;
 
-newCall(); // mom called ,too!
+newCall(); //Hey,undefined just called.
