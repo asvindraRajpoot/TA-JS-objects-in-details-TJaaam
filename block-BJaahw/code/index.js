@@ -43,15 +43,15 @@
 
 
 
-// function createUser(name,age){
+// function CreateUser(name,age){
     
-//     let user={}
-//     user.name=name;
-//     user.age=age;
-//     return user;
+
+//     this.name=name;
+//     this.age=age;
+//    
    
 // }
-// createUser.prototype={
+// CreateUser.prototype={
 //     sayHello(){
 //         alert(`Welcome ${this.name}`);
 //     }
