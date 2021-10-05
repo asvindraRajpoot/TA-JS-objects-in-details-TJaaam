@@ -58,7 +58,7 @@ let animalMethod={
     eat:function(){
        return  `I live in ${this.location} and I can eat`
     },
-    changeLocation: function changeLocation(newLocation){
+    changeLocation: function(newLocation){
         this.location=newLocation;
         return this.location;
 
@@ -106,9 +106,8 @@ Object.setPrototypeOf(animalDogMethod,animalMethod);
 
 function createAnimalDog(location,noOfLegs,name,color){
 
-    let animal=Object.create(animalDogMethod);
-    animal.location=location;
-    animal.noOfLegs=noOfLegs;
+    let animal=createAnimal(location,noOfLegs);
+    Object.setPrototypeOf(animal,animalDogMethod);
     animal.name=name;
     animal.color=color;
     return animal;
@@ -138,9 +137,9 @@ Object.setPrototypeOf(animalCatMethod,animalMethod);
 
 function createAnimalCat(location,noOfLegs,name,colorOfEyes){
 
-    let animal=Object.create(animalCatMethod);
-    animal.location=location;
-    animal.noOfLegs=noOfLegs;
+    let animal=createAnimal(location,noOfLegs);
+    Object.setPrototypeOf(animal,animalCatMethod);
+
     animal.name=name;
     animal.colorOfEyes=colorOfEyes;
     return animal;
