@@ -46,7 +46,7 @@ console.log(typeof new MainUser()); // object
 console.log(typeof new MainUser()); // object
 console.log(new MainUser().sayHello()); // undefined
 console.log(new MainUser().sayHello.call(user2)); // Hello Arya
-console.log(new MainUser().sayHello.call(user)); // Hello John
+console.log(new MainUser().sayHello.call(user)); // 'Hello John'
 console.log(
   new MainUser().sayHello.apply(user, ['Welcome!'])
 ); // Welcome John
