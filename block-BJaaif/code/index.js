@@ -7,9 +7,9 @@
 function makePerson(name, age) {
   // add code here
   let obj={}
-  this.name=name;
-  this.age=age;
-  return this;
+  obj.name=name;
+  obj.age=age;
+  return obj;
 }
 
 var vicky = makePerson('Vicky', 24);
