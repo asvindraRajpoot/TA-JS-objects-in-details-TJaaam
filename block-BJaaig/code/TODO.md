@@ -29,7 +29,7 @@ function MainUser() {
 
 let userSayHello = user.sayHello;
 
-console.log(user.sayHello()); // Hello John
+console.log(user.sayHello()); // 'Hello John'
 console.log(user2.sayHello()); // Hello Arya
 console.log(user.sayHello.call(user2)); // Hello Arya
 console.log(user.sayHello.call(user2, 'Hey')); // Hey Arya
@@ -50,4 +50,5 @@ console.log(new MainUser().sayHello.call(user)); // 'Hello John'
 console.log(
   new MainUser().sayHello.apply(user, ['Welcome!'])
 ); // Welcome John
+//output:Welcome John
 ```
