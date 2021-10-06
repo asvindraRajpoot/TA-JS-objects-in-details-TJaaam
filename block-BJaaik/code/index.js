@@ -46,8 +46,8 @@ class Artist extends Person{
 }
 
 class Cricketer extends Player{
-    constructor(teamName,name,age,gender){
-        super(name,age,gender)
+    constructor(sportsName,teamName,name,age,gender){
+        super(sportsName,name,age,gender)
         this.teamName=teamName;
     }
    playCricket(){
