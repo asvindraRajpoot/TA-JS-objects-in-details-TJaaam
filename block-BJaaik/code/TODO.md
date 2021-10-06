@@ -1,6 +1,6 @@
 ## Create Class
 
-Convert the give image into class using inheritance.
+Convert the given image into class using inheritance.
 
 - `name` is the property
 - `eat()` is the method
