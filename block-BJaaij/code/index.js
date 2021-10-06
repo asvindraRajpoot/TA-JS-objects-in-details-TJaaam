@@ -30,12 +30,12 @@
 
 // After creating the Book and BookList class create 5 book object and add it to list. Test all the methods in Book and BookList class.
 class Book{
-    constructor(title,category,author,isRead=false,finishedDate){
+    constructor(title,category,author){
         this.title=title;
         this.category=category;
         this.author=author;
-        this.isRead=isRead;
-        this.finishedDate=finishedDate; 
+        this.isRead=false;
+        this.finishedDate=null; 
     }
     markBookAsRead(){
         this.isRead=true;
@@ -46,35 +46,36 @@ class Book{
 
 }
 class BookList{
-    constructor(arrBooks,index){
-        this.arrBooks=arrBooks;
-        this.index=index;
+    constructor(){
+        this.books=[];
+        this.index=0;
     }
-    add(book){
-        this.arrBooks.push(book);
+    add(books=[]){
+        this.books=this.books.concat(books);
+        return this.books;
 
     }
     getCurrentBook(){
-        return this.arrBooks[this.index];
+        return this.books[this.index];
     }
     getNextBook(){
-        return this.arrBooks[this.index+1];
+        return this.books[this.index+1];
     }
     getPrevBook(){
-        return this.arrBooks[this.index-1];
+        return this.books[this.index-1];
     }
     changeCurrentBook(changed){
-       return this.arrBooks[this.index=changed];
+       return this.books[this.index=changed];
     }
     
 }
 
-let book1=new Book('money','fiction','ronald',false,'21/2/21');
-let book2=new Book('money2','fiction2','ronald2',false,'13/2/21');
-let book3=new Book('money4','fiction3','ronald3',false,'20/2/21');
-let book4=new Book('money5','fiction4','ronald4',false,'10/2/21');
-let book5=new Book('money5','fiction5','ronald5',false,'1/2/21');
-let book6=new Book('money6','fiction5','ronald5',false,'1/2/21');
+let book1=new Book('money','fiction','ronald');
+let book2=new Book('money2','fiction2','ronald2');
+let book3=new Book('money4','fiction3','ronald3');
+let book4=new Book('money5','fiction4','ronald4');
+let book5=new Book('money5','fiction5','ronald5');
+let book6=new Book('money6','fiction5','ronald5');
 let BookList1=new BookList([],3);
 BookList1.add(book1);
 BookList1.add(book2);
