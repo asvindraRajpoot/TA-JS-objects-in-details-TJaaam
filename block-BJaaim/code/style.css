@@ -101,12 +101,22 @@ span{
 }
 button{
  
-    position: absolute;
-    right: 0;
-    z-index: 1;
-    margin-top: -2rem;
+   
+    
+    margin-top: 0rem;
     background-color: black;
     color: white;
     border-top: none;
     padding: .5rem 2rem ;
+}
+
+.nav-btn{
+   
+    display: flex;
+    justify-content: space-between;
+}
+.res{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
 }
